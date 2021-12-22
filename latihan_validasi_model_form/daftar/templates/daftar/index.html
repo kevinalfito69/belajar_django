@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}
+{{title}}
+{% endblock title %}
+{% block content %}
+{{title}}
+{% for post in postmodel %}
+<h1>Nama :{{post.nama}}</h1>
+<p>jenis kelamin :{{post.jenis_kelamin}}</p>
+<p>Alamat : {{post.alamat}}</p>
+<p>Tanggal lahir : {{post.tanggal_lahir}}</p>
+{% endfor %}
+{% endblock content %}
