@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+{{title}}
+{% endblock title %}
+{% block content %}
+{% for post in postmodel %}
+<br>
+<h2>{{post.judul}}</h2>
+
+<p>{{post.body}}</p>
+<br>
+<p>Kategori :{{post.category}}</p>
+<b>Author : {{post.author}}</b>
+
+{% endfor %}
+
+{% endblock content %}
+
