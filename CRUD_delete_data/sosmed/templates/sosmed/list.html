@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+{{title}}
+{% endblock title %}
+{% block content %}
+<h1>{{title}}</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nama depan</th>
+      <th scope="col">Nama Belakang</th>
+      <th scope="col">Username</th>
+      <th scope="col">Aksi</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+      {% for ig in akun %}
+      <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{ig.nama_depan}}</td>
+      <td>{{ig.nama_belakang}}</td>
+      <td>{{ig.username}}</td>
+      <td><a class='btn btn-danger' href="{% url 'sosmed:delete' ig.id %}">Hapus</a></td>
+       </tr>
+      {% endfor %}
+   
+    
+  </tbody>
+</table>
+<a class="btn btn-dark" href="{% url 'sosmed:create' %}">create</a>
+{% endblock content %}
