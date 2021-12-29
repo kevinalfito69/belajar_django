@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+{{title}}
+{% endblock title %}
+{% block content %}
+<h1>{{title}}</h1> 
+<table style ="text-align:center;">
+    <thead >
+        <tr>
+        <th>Nama Depan</th>
+        <th>Nama Belakang</th>
+        <th>Jenis Kelamin</th>
+        <th>Aksi</th>
+        </tr>
+    </thead>
+
+{% for data in modelbiodata %}
+
+<tr>
+    <td>{{data.nama_depan}}</td>
+    <td>{{data.nama_belakang}}</td>
+    <td>{{data.jenis_kelamin}}</td>
+    <td><a href="{% url 'biodata:delete' data.id %}">delete</a>|<a href="{% url 'biodata:edit' data.id %}">Edit</a></td>
+</tr>
+{% endfor %}
+</table>
+
+
+{% endblock content %}
