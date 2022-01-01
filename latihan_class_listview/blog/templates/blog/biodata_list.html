@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{title}}</h1>
+    <table >
+        <th>
+            <tr>
+            <td>Nama</td>
+            <td>Umur</td>
+            <td>Tanggal lahir</td>
+            </tr>
+        </th>
+        {% for data in object_list %}
+        <tr>
+            <td>{{data.nama}}</td>
+            <td>{{data.umur}}</td>
+            <td>{{data.tanggal_lahir}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+   
+</body>
+</html>
